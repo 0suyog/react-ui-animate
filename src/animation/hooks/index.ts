@@ -1,2 +1,2 @@
 export { useValue } from './useValue';
-export { useMount } from './useMount';
+export { useClientMount as useMount } from './useClientMount';

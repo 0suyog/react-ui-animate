@@ -3,10 +3,10 @@ import type { MotionValue } from '@raidipesh78/re-motion';
 
 import type { Primitive } from '../types';
 import {
-  useMount,
+  useClientMount,
   type ConfigMulti,
   type ConfigSingle,
-} from '../hooks/useMount';
+} from '../hooks/useClientMount';
 
 interface MountPropsSingle<T extends Primitive>
   extends Partial<ConfigSingle<T>> {
@@ -33,7 +33,7 @@ export function Mount({
   children,
   ...config
 }: MountPropsSingle<any> | MountPropsMulti<any>) {
-  const open = useMount(state, config);
+  const open = useClientMount(state, config);
   return (
     <>{open((animation, mounted) => mounted && children(animation as any))}</>
   );
